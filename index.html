@@ -25,9 +25,9 @@
     .skip{position:fixed;left:16px;top:-80px;z-index:99;background:#fff;padding:10px 14px;border-radius:999px;color:var(--ink);box-shadow:var(--shadow)}
     .skip:focus{top:16px}.topbar{display:none}
     .nav{position:relative;z-index:10;min-height:84px;display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:auto;padding:18px 34px;background:#fff;color:var(--ink)}
-    .brand{display:inline-flex;align-items:center;text-decoration:none;color:#43534c;flex:0 0 auto}
-    .logo-mark{display:block;width:72px;height:72px;flex:0 0 auto}
-    .brand .logo-mark{filter:drop-shadow(0 3px 8px rgba(33,52,45,.08))}
+    .brand{display:inline-flex;flex-direction:column;align-items:flex-start;text-decoration:none;color:#31483f;flex:0 0 auto;line-height:1}
+    .brand-name{font-family:"Lora",serif;font-size:22px;font-weight:600;letter-spacing:-.02em}
+    .brand-place{margin-top:7px;color:#60736a;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
     .navlinks{display:flex;gap:25px;align-items:center;font-size:14px;font-weight:600;color:#46564f}
     .navlinks a{text-decoration:none}.navlinks a:not(.navcta):hover{color:#18231f}
     .navcta,.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;text-decoration:none;font-weight:700;letter-spacing:.045em;text-transform:uppercase;font-size:12px;padding:14px 21px;border-radius:999px;transition:background .2s,transform .2s}
@@ -67,7 +67,7 @@
     .services{padding-bottom:90px}.service-list{grid-template-columns:repeat(4,1fr)}.service{padding:30px 26px 34px 0;min-height:220px}.service:not(:nth-child(3n+1)){padding-left:0;border-left:0}.service:not(:nth-child(4n+1)){padding-left:26px;border-left:1px solid rgba(255,255,255,.25)}.service h3{font-size:27px}.service p{font-size:15px;line-height:1.65}
     .expect{background:#f7f4ee}.expect-head{display:grid;grid-template-columns:1fr .85fr;gap:70px;align-items:end;margin-bottom:54px}.expect-head p{margin:0;color:#617069;font-size:17px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#cdd7d2;border:1px solid #cdd7d2}.step{background:#f7f4ee;padding:38px 34px;min-height:260px}.step .number{color:#4f685e;margin-bottom:27px}.step h3{font-size:28px;margin-bottom:13px}.step p{color:#5d6b65;margin:0}.expect-note{display:flex;justify-content:space-between;gap:24px;margin-top:28px;padding:22px 0;border-bottom:1px solid #cad3cf;color:#506159}.expect-note strong{color:#26372f}.expect-note a{font-weight:700;text-underline-offset:4px}
     .reviews{background:#fff;text-align:center}.reviews h2{max-width:760px;margin:auto}.rating-summary{display:inline-flex;align-items:baseline;gap:10px;margin-top:20px;color:#405b51}.rating-summary strong{font-family:"Lora",serif;font-size:34px}.rating-summary span{font-weight:700}.reviews-intro{max-width:660px;margin:14px auto 46px;color:#617069;font-size:17px}.review-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:left}.quote{background:var(--sage-pale);padding:38px 36px;border-radius:3px}.quote p{font-family:"Lora",serif;font-size:22px;font-weight:500;line-height:1.5;margin:0 0 21px}.quote cite{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#536860}.award{margin-top:20px;padding:26px 30px;background:#5f746b;color:#fff;display:flex;align-items:center;justify-content:center;gap:18px}.award svg{width:32px;flex:0 0 auto}.award strong{font-family:"Lora",serif;font-size:22px;font-weight:600}.reviews .button{margin-top:34px;background:var(--sage);color:#fff;box-shadow:none}
-    footer{background:#5f746b;color:#fff;padding:34px max(28px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:30px;font-size:13px}.footer-brand{display:flex;align-items:center;gap:16px;font-family:"Lora",serif;font-weight:600;font-size:15px}.footer-brand .logo-mark{width:78px;height:78px;background:#fff}.footer-links{text-align:right}footer a{color:#fff;text-underline-offset:3px}.mobile-book{display:none}
+    footer{background:#5f746b;color:#fff;padding:34px max(28px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:30px;font-size:13px}.footer-brand{display:flex;flex-direction:column;align-items:flex-start;gap:4px}.footer-brand strong{font-family:"Lora",serif;font-size:16px;font-weight:600}.footer-brand span{color:#edf3f0}.footer-links{text-align:right}footer a{color:#fff;text-underline-offset:3px}.mobile-book{display:none}
     @media(min-width:901px) and (max-width:1120px){
       .nav{padding-inline:24px}.navlinks{gap:13px;font-size:13px}.navcta{padding-inline:16px}
       .hero{width:calc(100% - 32px)}.hero-inner{padding-left:42px}.hero-photo{left:67%;width:38%;min-width:360px}.proof{right:25px}
@@ -84,8 +84,8 @@
       .hero{width:100%;min-height:0;border-radius:0;display:flex;flex-direction:column;align-items:stretch}.hero-photo{position:relative;order:0;left:auto;right:auto;top:auto;bottom:auto;width:calc(100% - 40px);min-width:0;height:clamp(285px,72vw,420px);transform:none;align-self:flex-end;border-radius:0 0 0 46%;box-shadow:none;background-position:48% center}.hero-inner{order:1;padding:42px 22px 64px}.proof{display:none}h1{font-size:clamp(46px,12.7vw,64px);max-width:680px;line-height:.98}.lead{font-size:16px;max-width:560px;margin:21px 0 26px}.hero-actions{gap:16px}.hero-actions .button{min-height:50px;padding-inline:20px}.text-link{min-height:44px;display:inline-flex;align-items:center}
       .section{padding:72px 22px}.intro{padding:68px 22px 74px}.intro-copy{font-size:21px;line-height:1.45}.meet{grid-template-columns:1fr;gap:38px}.meet-photo{min-height:clamp(330px,85vw,480px);border-radius:3px 44% 3px 3px}.meet-copy p{font-size:16px}.trust{padding:0 22px}.trust-grid{grid-template-columns:1fr}.trust-item{padding:27px 4px}.trust-item+ .trust-item{border-left:0;border-top:1px solid var(--line)}.trust-icon{margin-bottom:13px}.services-head{display:block;margin-bottom:38px}.services-head p{margin-top:20px}.service-list{grid-template-columns:1fr}.service{min-height:auto;padding:25px 0!important;border-left:0!important}.number{margin-bottom:10px}.service h3{font-size:29px;margin-bottom:9px}.benefits{grid-template-columns:1fr;gap:34px}.benefits-list{grid-template-columns:1fr}.benefits-list span{padding:13px 0!important;border-left:0!important}.benefits-action{display:block;padding:22px}.benefits-action .button{width:100%;margin-top:18px;min-height:50px}.conditions{grid-template-columns:1fr;gap:34px}.conditions-photo{min-height:clamp(300px,74vw,420px);order:-1;border-radius:38% 3px 3px 3px}.condition-grid{grid-template-columns:1fr}.condition{padding:17px 0!important;border-left:0!important}.expect-head{grid-template-columns:1fr;gap:20px;margin-bottom:34px}.steps{grid-template-columns:1fr}.step{min-height:auto;padding:29px 24px}.expect-note{display:block}.expect-note a{display:inline-block;margin-top:10px}.review-grid{grid-template-columns:1fr}.quote{padding:30px 25px}.quote p{font-size:21px}.award{text-align:left;justify-content:flex-start;padding:22px}.visit{grid-template-columns:1fr}.visit-photo{min-height:clamp(310px,82vw,440px)}.visit-card{padding:58px 22px 76px}.visit-card h2{font-size:43px;margin-bottom:28px}.visit-actions{display:grid;grid-template-columns:1fr;gap:11px}.visit-actions .button{min-height:50px}.closing{padding:72px 22px}.closing h2{font-size:43px}.closing .button{min-height:50px}footer{align-items:flex-start;flex-direction:column;padding:30px 22px calc(30px + env(safe-area-inset-bottom));gap:18px}.footer-links{text-align:left}.mobile-book{display:flex;position:fixed;z-index:40;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));min-height:54px;align-items:center;justify-content:center;background:#27483f;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;font-size:11px;font-weight:700;border-radius:999px;box-shadow:0 12px 30px rgba(25,52,43,.3)}
     }
-    @media(max-width:480px){.brand .logo-mark{width:56px;height:56px}.hero-photo{width:calc(100% - 24px);height:clamp(270px,75vw,340px)}.hero-inner{padding:38px 20px 58px}.hero-actions{align-items:stretch;gap:10px;flex-direction:column}.hero-actions .button{width:100%}.text-link{justify-content:center;padding:0}.section{padding-inline:20px}.intro{padding-inline:20px}.visit-card{padding-inline:20px}.closing{padding-inline:20px}.award{align-items:flex-start}.award strong{font-size:20px;line-height:1.25}}
-    @media(max-width:370px){.brand .logo-mark{width:52px;height:52px}.hero-photo{height:255px}h1{font-size:42px}.visit-card h2,.closing h2{font-size:39px}}
+    @media(max-width:480px){.brand-name{font-size:19px}.brand-place{margin-top:6px;font-size:9px}.hero-photo{width:calc(100% - 24px);height:clamp(270px,75vw,340px)}.hero-inner{padding:38px 20px 58px}.hero-actions{align-items:stretch;gap:10px;flex-direction:column}.hero-actions .button{width:100%}.text-link{justify-content:center;padding:0}.section{padding-inline:20px}.intro{padding-inline:20px}.visit-card{padding-inline:20px}.closing{padding-inline:20px}.award{align-items:flex-start}.award strong{font-size:20px;line-height:1.25}}
+    @media(max-width:370px){.brand-name{font-size:17px}.brand-place{letter-spacing:.12em}.hero-photo{height:255px}h1{font-size:42px}.visit-card h2,.closing h2{font-size:39px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.navcta,.button,.menu svg{transition:none}}
   </style>
 </head>
@@ -94,17 +94,8 @@
   <div class="topbar">Serving the North Park community in San Diego</div>
   <nav class="nav" aria-label="Main navigation">
     <a class="brand" href="#main" aria-label="North Park Acupuncture home">
-      <svg class="logo-mark" viewBox="0 0 480 480" aria-hidden="true" focusable="false">
-        <rect x="8" y="8" width="464" height="464" fill="#fff" stroke="#6f9a4d" stroke-width="6"/>
-        <g transform="translate(-18 48)">
-          <g fill="none" stroke-linecap="round"><path d="M292 268C310 190 336 118 386 34" stroke="#557d36" stroke-width="13"/><path d="M248 286C262 210 288 140 332 58" stroke="#5f8f3e" stroke-width="10"/><path d="M330 250C352 190 376 140 418 84" stroke="#4c7030" stroke-width="9"/></g>
-          <g fill="#5f8f3e"><path d="M386 34c28-12 58-10 80 8-28 8-54 6-80-8Z"/><path d="M386 34c-14-22-18-36-14-50 16 12 22 30 14 50Z"/><path d="M332 58c-20-18-32-34-34-52 18 10 30 28 34 52Z"/><path d="M332 58c22-10 42-10 60 0-22 8-42 8-60 0Z"/><path d="M418 84c24-8 46-4 62 12-24 6-44 2-62-12Z"/><path d="M418 84c-14-20-18-36-14-54 14 14 20 32 14 54Z"/><path d="M300 170c-22-12-36-26-42-44 18 8 32 22 42 44Z"/><path d="M300 170c22-8 40-8 56 0-20 10-38 10-56 0Z"/><path d="M352 200c22-8 40-8 56 0-20 10-38 10-56 0Z"/></g>
-        </g>
-        <circle cx="196" cy="238" r="148" fill="#2e5ba6"/>
-        <text x="196" y="232" text-anchor="middle" fill="#fff" font-family="Georgia, 'Times New Roman', serif" font-size="62" letter-spacing="3">NORTH</text>
-        <text x="196" y="296" text-anchor="middle" fill="#fff" font-family="Georgia, 'Times New Roman', serif" font-size="62" letter-spacing="3">PARK</text>
-        <text x="196" y="436" text-anchor="middle" fill="#5f8f3e" font-family="Georgia, 'Times New Roman', serif" font-size="38" letter-spacing="7">ACUPUNCTURE</text>
-      </svg>
+      <span class="brand-name">North Park Acupuncture</span>
+      <span class="brand-place">San Diego, California</span>
     </a>
     <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks" aria-label="Open menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -143,11 +134,12 @@
     <section class="section meet" id="about">
       <div class="meet-photo" role="img" aria-label="Quiet wellness treatment room with a treatment table beside a large window"></div>
       <div class="meet-copy">
-        <div class="section-label">Meet Namrata</div>
+        <div class="section-label">Meet the team</div>
         <h2>Care begins with listening.</h2>
-        <p class="role">Namrata Sakya · Licensed Acupuncturist in San Diego, CA</p>
-        <p>Together we will create a customized treatment plan that focuses on your individual health needs. Your healthy balance is achieved through the use of Alternative Medicine techniques that include Acupuncture, Chinese herbs, and Functional Medicine.</p>
-        <p class="specialty-line"><strong>Clinical focus:</strong> acupuncture, heat therapy, and manual therapy, commonly supporting joint pain and back pain, including during pregnancy and for children and teens.</p>
+        <p class="role">Namrata Sakya · Licensed Acupuncturist · San Diego, CA</p>
+        <p>Welcome to North Park Acupuncture — dedicated to achieving your Optimal Health through safe and natural means.</p>
+        <p>Together we will create a customized treatment plan that focuses on your individual health needs. Your healthy balance is achieved through the use of Alternative Medicine techniques that include Acupuncture, Chinese herbs, and Functional Medicine. We use the most current diagnostic tools and nutritional supplements available.</p>
+        <p class="specialty-line"><strong>Specialties:</strong> Acupuncture, Heat Therapy, and Manual Therapy.<br><strong>Conditions most often treated:</strong> joint pain, back pain—including during pregnancy and in children and teens—hip pain, foot pain, neck pain, shoulder pain, headaches, and chronic pain.</p>
         <div class="signature">Thoughtful care, made personal.</div>
       </div>
     </section>
@@ -158,7 +150,7 @@
           <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v18M5.5 7.5 12 3l6.5 4.5M6 21h12"/><path d="M8 10h8M8 14h8"/></svg>
           <h3>Decades of experience</h3>
           <p>More than 20 years across research, clinical practice, and education.</p>
-          <a href="https://northparkacupuncture.com/about-us/our-staff/" target="_blank" rel="noopener">Meet the team →</a>
+          <a href="#about">Meet the team →</a>
         </article>
         <article class="trust-item">
           <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s7-4.4 7-11V5l-7-2-7 2v5c0 6.6 7 11 7 11Z"/><path d="m9 12 2 2 4-5"/></svg>
@@ -285,18 +277,8 @@
 
   <footer>
     <div class="footer-brand">
-      <svg class="logo-mark" viewBox="0 0 480 480" role="img" aria-label="North Park Acupuncture logo">
-        <rect x="8" y="8" width="464" height="464" fill="#fff" stroke="#6f9a4d" stroke-width="6"/>
-        <g transform="translate(-18 48)">
-          <g fill="none" stroke-linecap="round"><path d="M292 268C310 190 336 118 386 34" stroke="#557d36" stroke-width="13"/><path d="M248 286C262 210 288 140 332 58" stroke="#5f8f3e" stroke-width="10"/><path d="M330 250C352 190 376 140 418 84" stroke="#4c7030" stroke-width="9"/></g>
-          <g fill="#5f8f3e"><path d="M386 34c28-12 58-10 80 8-28 8-54 6-80-8Z"/><path d="M386 34c-14-22-18-36-14-50 16 12 22 30 14 50Z"/><path d="M332 58c-20-18-32-34-34-52 18 10 30 28 34 52Z"/><path d="M332 58c22-10 42-10 60 0-22 8-42 8-60 0Z"/><path d="M418 84c24-8 46-4 62 12-24 6-44 2-62-12Z"/><path d="M418 84c-14-20-18-36-14-54 14 14 20 32 14 54Z"/><path d="M300 170c-22-12-36-26-42-44 18 8 32 22 42 44Z"/><path d="M300 170c22-8 40-8 56 0-20 10-38 10-56 0Z"/><path d="M352 200c22-8 40-8 56 0-20 10-38 10-56 0Z"/></g>
-        </g>
-        <circle cx="196" cy="238" r="148" fill="#2e5ba6"/>
-        <text x="196" y="232" text-anchor="middle" fill="#fff" font-family="Georgia, 'Times New Roman', serif" font-size="62" letter-spacing="3">NORTH</text>
-        <text x="196" y="296" text-anchor="middle" fill="#fff" font-family="Georgia, 'Times New Roman', serif" font-size="62" letter-spacing="3">PARK</text>
-        <text x="196" y="436" text-anchor="middle" fill="#5f8f3e" font-family="Georgia, 'Times New Roman', serif" font-size="38" letter-spacing="7">ACUPUNCTURE</text>
-      </svg>
-      <span>© 2026 North Park Acupuncture</span>
+      <strong>North Park Acupuncture</strong>
+      <span>© 2026 · San Diego, California</span>
     </div>
     <div class="footer-links"><a href="http://www.northparkacupuncture.com/" target="_blank" rel="noopener">Original website</a> · <a href="tel:+16192946616">(619) 294-6616</a> · Photography: <a href="https://www.pexels.com/photo/a-person-having-an-acupuncture-treatment-8313427/" target="_blank" rel="noopener">Pexels</a></div>
   </footer>
